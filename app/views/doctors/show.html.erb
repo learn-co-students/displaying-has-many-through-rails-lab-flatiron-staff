@@ -1,0 +1,13 @@
+<h1><% @doctor.name %></h1>
+
+<%=@doctor.department%>
+
+
+
+
+  <%@doctor.appointments.each do |a|%>
+    <p><%=a.appointment_datetime[1]/a.appointment_datetime[2]/a.appointment_datetime[0]%></p>
+    <p><%=a.appointment_datetime[3]: a.appointment_datetime[4]%></p>
+    <p><%=link_to a.patient, a.patient%></p>
+    <hr>
+  <%end>
