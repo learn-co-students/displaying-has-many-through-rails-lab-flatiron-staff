@@ -2,12 +2,8 @@
 
 <%=@doctor.department%>
 
-
-
-
-  <%@doctor.appointments.each do |a|%>
-    <p><%=a.appointment_datetime[1]/a.appointment_datetime[2]/a.appointment_datetime[0]%></p>
-    <p><%=a.appointment_datetime[3]: a.appointment_datetime[4]%></p>
-    <p><%=link_to a.patient, a.patient%></p>
-    <hr>
-  <%end>
+<%@doctor.appointments.each do |a|%>
+  <p><%=a.appointment_datetime.strftime("%B %d, %Y at %H:%M")%></p>
+  <p><%=link_to a.patient.name, patient_path(a.patient)%></p>
+  <hr>
+<%end%>
