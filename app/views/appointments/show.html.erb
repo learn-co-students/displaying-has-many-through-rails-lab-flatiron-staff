@@ -3,5 +3,8 @@
 <p>Date:</p>
 <%=@appointment.doctor%>
 <p>Time:</p>
+<%=@appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M")%>
 <p>Patient:</p>
+<%=@appointment.patient%>
 <p>Doctor:</p>
+<%=@appointment.doctor%>
